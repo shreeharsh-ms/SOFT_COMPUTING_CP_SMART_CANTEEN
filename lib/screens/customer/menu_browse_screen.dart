@@ -577,29 +577,31 @@ class _MenuBrowseScreenState extends State<MenuBrowseScreen> {
                                         ),
                                       ),
                                       const SizedBox(height: 8),
-                                      Row(
+                                      Wrap(
+                                        spacing: 6,
+                                        runSpacing: 4,
+                                        crossAxisAlignment: WrapCrossAlignment.center,
                                         children: [
                                           Container(
-                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3.5),
                                             decoration: BoxDecoration(
                                               color: Colors.white,
-                                              borderRadius: BorderRadius.circular(8),
+                                              borderRadius: BorderRadius.circular(6),
                                               border: Border.all(color: const Color(0xFFEA580C)),
                                             ),
                                             child: Text(
                                               "ORDER ABOVE ₹199",
                                               style: GoogleFonts.plusJakartaSans(
-                                                fontSize: 10,
+                                                fontSize: 9.5,
                                                 fontWeight: FontWeight.w800,
                                                 color: const Color(0xFFEA580C),
                                               ),
                                             ),
                                           ),
-                                          const SizedBox(width: 8),
                                           Text(
                                             "GET ₹50 OFF",
                                             style: GoogleFonts.plusJakartaSans(
-                                              fontSize: 12,
+                                              fontSize: 11.5,
                                               fontWeight: FontWeight.w900,
                                               color: const Color(0xFFEA580C),
                                             ),
@@ -687,15 +689,19 @@ class _MenuBrowseScreenState extends State<MenuBrowseScreen> {
                           ),
                         ),
                         const SizedBox(width: 8),
-                        Text(
-                          _selectedCategoryFilter != null ? "$_selectedCategoryFilter Specialities" : "Popular at ${widget.canteenName}",
-                          style: GoogleFonts.plusJakartaSans(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w800,
-                            color: const Color(0xFF0F172A),
+                        Expanded(
+                          child: Text(
+                            _selectedCategoryFilter != null ? "$_selectedCategoryFilter Specialities" : "Popular at ${widget.canteenName}",
+                            style: GoogleFonts.plusJakartaSans(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w800,
+                              color: const Color(0xFF0F172A),
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
                         ),
-                        const Spacer(),
+                        const SizedBox(width: 8),
                         Text(
                           "${filteredItems.length} items",
                           style: GoogleFonts.plusJakartaSans(

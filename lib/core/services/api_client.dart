@@ -4,7 +4,7 @@ import "package:http/http.dart" as http;
 import "package:flutter_secure_storage/flutter_secure_storage.dart";
 
 class ApiClient {
-  static const String baseUrl = "https://backend-gules-three-14.vercel.app/api/v1";
+  static const String baseUrl = "http://localhost:8000/api/v1";
   static const FlutterSecureStorage _storage = FlutterSecureStorage();
   static VoidCallback? onUnauthorized;
 
