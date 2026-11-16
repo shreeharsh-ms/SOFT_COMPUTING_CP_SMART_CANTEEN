@@ -9,7 +9,9 @@ import "api_client.dart";
 enum WsConnectionStatus { disconnected, connecting, authenticating, connected }
 
 class WebSocketClient {
-  static const String wsBaseUrl = "ws://localhost:8000/api/v1/ws/connect";
+  static const String localWsUrl = "ws://localhost:8000/api/v1/ws/connect";
+  static const String prodWsUrl = "wss://backend-gules-three-14.vercel.app/api/v1/ws/connect";
+  static String get wsBaseUrl => kIsWeb ? localWsUrl : prodWsUrl;
   
   WebSocketChannel? _channel;
   StreamSubscription? _subscription;
